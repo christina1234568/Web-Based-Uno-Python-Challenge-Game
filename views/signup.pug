@@ -1,0 +1,51 @@
+doctype html 
+html 
+    head 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        title Uno Python Challenge Game
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        link(rel="stylesheet", href="css/common.css")
+        link(rel="stylesheet", href="css/login.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet")
+    body 
+        header 
+            div.logo
+                div.uno Uno Python
+                div.challenge Challenge Game
+        nav
+            a(href="/") About Us
+            a(href="/homepage") Homepage
+            a(href="/rules") Rules
+            a(href="/login") Login                
+            a(href="/signup") Sign Up
+
+        div.content
+            h1 Sign Up
+            p(style="color: red; text-align: center;") #{error}
+            p#emailError(style="color: red; text-align: center;")
+            form(action="/signup", method="post")
+                div.formComponent
+                    label(for="username") Username:
+                    input(type="text", name="username", required)
+
+                div.formComponent
+                    label(for="email") Email:
+                    input#email(type="email", name="email", required, data-form-type="signup")
+
+                div.formComponent
+                    label(for="password") Password:
+                    input(type="password", name="password", required)
+
+                div.formComponent
+                    label(for="password") Confirm Password:
+                    input(type="password", name="confirmPassword", required)
+
+                div.buttonContainer
+                    button#submitButton(type="submit") Sign Up
+
+            h3 Already have an account? 
+            a(href="/login") Login
+
+        script(src='/js/checkEmail.js')

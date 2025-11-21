@@ -1,0 +1,68 @@
+doctype html
+html
+    head
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Uno Python Challenge Game
+        link(rel="stylesheet", href="css/common.css")
+        link(rel="stylesheet", href="css/game.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet")
+    body 
+        header 
+            div.logo
+                div.uno Uno Python
+                div.challenge Challenge Game
+
+        nav
+
+        .content
+            h2 Game Pin: #{gamePin}
+
+            p#errorMessage(style="color: red; text-align: center;") #{error}
+
+            if isHost
+                h3 Scoreboard
+                .scoreboard-container
+                    #scoreboardList
+                button.buttons(type="button" id="endButton") End Game
+            else
+                button.buttons(type="button" id="scoreboardButton") Scoreboard
+                div#reader(style="width:300px; height:300px; margin:0 auto; border-radius:10px; background-color:#f5f5f5")
+                button.buttons(type="button" id="exitButton") Exit
+
+                #scoreboardModal.modal(style="display: none;")
+                    .modalContent
+                        span.close(id="closeScoreboardModal") &times;
+                        h2 Scoreboard
+                        p#error(style="color: red; text-align: center;")
+                        .scoreboard-container
+                            #scoreboardList
+
+                #questionModal.modal(style="display: none;")
+                    .modalContent
+                        span.close(id="closeQuestionModal") &times;
+                        .player 
+                            h3 Player:
+                            h3#username
+                        h3 Question:
+                        h4#questionText
+                        p#error(style="color: red; text-align: center;")
+                        .optionsContainer
+                            button.option(id="A", data-character="A") A.
+                            button.option(id="B", data-character="B") B.
+                            button.option(id="C", data-character="C") C.
+                            button.option(id="D", data-character="D") D.
+                        p#isCorrect(style="text-align: center;")
+                        p#consequence(style="text-align: center;")
+
+                #rewardModal.modal(style="display: none;")
+                    .modalContent
+                        span.close(id="closeRewardModal") &times;
+                        h3 Reward Unlocked!
+                        p#rewardMessage
+
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        script(src="/js/html5-qrcode.min.js")
+        script(src="/js/game.js")
+        script(src="/js/processQR.js")

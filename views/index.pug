@@ -1,0 +1,38 @@
+doctype html 
+html 
+    head 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        title Uno Python Challenge Game
+        link(rel="stylesheet", href="css/common.css")
+        link(rel="stylesheet", href="css/index.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet")
+    body 
+        header 
+            div.logo
+                div.uno Uno Python
+                div.challenge Challenge Game
+        nav
+            a(href="/") About Us
+            a(href="/homepage") Homepage
+            a(href="/rules") Rules
+            if !loggedin
+                a(href="/login") Login 
+                a(href="/signup") Sign Up
+            else
+                a(href="/logout", onclick="return confirm('Are you sure you want to log out?')") Logout
+
+        div.content
+            h1 About us
+            div.about 
+                div.description
+                    p
+                        |The Uno Python Challenge Game comes with a twist in the original Uno Game. The aim of this game is to allow its players 
+                        |to challenge themselves and the other players on their knowledge of control flows in Python. 
+                        |The game introduces QR code cards that the player can scan when challenged. Then the question will pop up on the 
+                        |mobile phone of the player. The player must choose between 4 options. If his answer is correct, the challenged player 
+                        |will receive a reward, if not, he will receive a penalty. New penalties and rewards have been introduced in the game to
+                        |to make it even more interesting. To play the game, login or sign up and create a new account! 
+                div.image
+                    img(src="/Image/pythonlogo.png" alt="Logo"  class="aboutImage")

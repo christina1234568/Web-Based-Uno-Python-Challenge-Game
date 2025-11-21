@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        title Uno Python Challenge Game
+        link(rel="stylesheet", href="css/common.css")
+        link(rel="stylesheet", href="css/lobby.css")
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet")
+    body 
+        header 
+            div.logo
+                div.uno Uno Python
+                div.challenge Challenge Game
+        nav
+        .content 
+            h1 Lobby 
+            h2 Game Pin: #{gamePin}
+            p#errorMessage(style="color: red; text-align: center;")
+            
+
+            h2 Players 
+            ul#players 
+
+
+            .buttons 
+                if isHost
+                    button(type="button" id="startButton") Start
+                    button(type="button" id="endButton") End
+                else
+                    button(type="button" id="exitButton") Exit
+
+
+        script(src="/js/lobby.js")

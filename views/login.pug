@@ -1,0 +1,42 @@
+doctype html 
+html 
+    head 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        title Uno Python Challenge Game
+        link(rel="stylesheet", href="css/common.css")
+        link(rel="stylesheet", href="css/login.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet")
+    body 
+        header 
+            div.logo
+                div.uno Uno Python
+                div.challenge Challenge Game
+        nav
+            a(href="/") About Us
+            a(href="/homepage") Homepage
+            a(href="/rules") Rules
+            a(href="/login") Login                
+            a(href="/signup") Sign Up
+
+        div.content
+            h1 Login
+            p(style="color: red; text-align: center;") #{error}
+            form(action="/login", method="post")
+                div.formComponent
+                    label(for="email") Email
+                    input(type="text", name="email", required)
+
+                div.formComponent
+                    label(for="password") Password
+                    input(type="password", name="password", required)
+
+                div.buttonContainer
+                    button(type="submit") Login
+
+
+
+
+            h3 No Account? 
+            a(href="signup") Sign Up

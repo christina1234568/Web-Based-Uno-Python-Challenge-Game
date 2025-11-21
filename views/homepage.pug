@@ -1,0 +1,44 @@
+doctype html
+html
+    head
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        title Uno Python Challenge Game
+        link(rel="stylesheet", href="css/common.css")
+        link(rel="stylesheet", href="css/homepage.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet")
+    body 
+        header 
+            div.logo
+                div.uno Uno Python
+                div.challenge Challenge Game
+        nav
+            a(href="/index") About Us
+            a(href="/homepage") Homepage
+            a(href="/rules") Rules
+            a(href="/logout", onclick="return confirm('Are you sure you want to log out?')") Logout
+        p(style="color: red; text-align: center;") #{error}
+        div.content
+            div.container.join 
+                a.btn(href="/joinGame" id="joinButton") Join Game Session
+
+            div.container.create
+                button.btn(id="createGameButton") Create Game Session
+
+            div.container.profile
+                a.btn(href="/profile" id="profileButton") Profile
+
+
+        #createModal.modal(style="display: none;")
+            .modalContent
+                span.close(id="closeModal") &times;
+                h2 Choose Game Level
+                p#error(style="color: red; text-align: center;")
+                div.levels 
+                    button.level(data-level="easy") Easy
+                    button.level(data-level="medium") Medium
+                    button.level(data-level="hard") Hard
+        
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        script(src="/js/homepage.js")

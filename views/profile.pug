@@ -1,0 +1,66 @@
+doctype html 
+html 
+    head 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        title Uno Python Challenge Game
+        link(rel="stylesheet", href="css/common.css")
+        link(rel="stylesheet", href="css/login.css")
+        link(rel="stylesheet", href="css/profile.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet")
+    body 
+        header 
+            div.logo
+                div.uno Uno Python
+                div.challenge Challenge Game
+        nav
+            a(href="/") About Us
+            a(href="/homepage") Homepage   
+            a(href="/rules") Rules
+            a(href="/logout", onclick="return confirm('Are you sure you want to log out?')") Logout
+           
+
+        div.content
+            h1 Profile
+            p#errorMessage(style="color: red; text-align: center;") #{error}
+            p#emailError(style="color: red; text-align: center;")
+            form(action="/profile", method="post")
+                div.formComponent
+                    label(for="username") Username
+                    input(type="text", name="username", required, value= username)
+
+                div.formComponent
+                    label(for="email") Email
+                    input#email(type="email", name="email", value= email, required, data-form-type="update" )
+
+                div.formComponent
+                    label(for="password") Change Password
+                    input(type="password", name="password", placeholder="Enter New Password", required)
+
+                div.formComponent
+                    label(for="password") Confirm Password
+                    input(type="password", name="confirmPassword", placeholder="Confirm New Password", required)
+
+                p(style = "text-align: center; margin-bottom: 30px;") If you do not want to update your username or email but not your password, please retype in your current password.
+
+                div.box
+                    div.buttonBox
+                        button#submitButton(type="submit") Save
+                    div.buttonBox
+                        button#backButton(type="button") Back
+                    div.buttonBox
+                        button#deleteButton(type="button") Delete
+
+                #createModal.modal(style="display: none;")
+                    .modalContent
+                        span.close(id="closeModal") &times;
+                        h2 Confirm Profile Deletion
+                        div.levels 
+                            button.level(type="button" id="cancelDelete") Cancel
+                            button.level(type="button" id="confirmDelete") Confirm
+
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        script(src="/js/profile.js")
+        script(src='/js/checkEmail.js')
+

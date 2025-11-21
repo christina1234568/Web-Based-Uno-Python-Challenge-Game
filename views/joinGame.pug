@@ -1,0 +1,33 @@
+doctype html
+html
+    head
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        title Uno Python Challenge Game
+        link(rel="stylesheet", href="css/common.css")
+        link(rel="stylesheet", href="css/joinGame.css")
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet")
+    body 
+        header 
+            div.logo
+                div.uno Uno Python
+                div.challenge Challenge Game
+        nav
+            a(href="/index") About Us
+            a(href="/homepage") Homepage
+            a(href="/rules") Rules
+            a(href="/logout", onclick="return confirm('Are you sure you want to log out?')") Logout
+
+        div.content 
+
+            h1 Join Game 
+
+            p(style="color: red; text-align: center;") #{message}
+
+            form(action="/join", method="post")
+                label(for="gamePin") Enter Game Pin
+                input(type="text", id="gamePin", name="gamePin", required)
+                div.btn
+                    button(type="submit" id="goButton") Go

@@ -1,0 +1,50 @@
+doctype html
+html
+    head
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        title Uno Python Challenge Game
+        link(rel="stylesheet", href="css/common.css")
+        link(rel="stylesheet", href="css/rules.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet")
+    body 
+        header 
+            div.logo
+                div.uno Uno Python
+                div.challenge Challenge Game
+        nav
+            a(href="/index") About Us
+            a(href="/homepage") Homepage
+            a(href="/rules") Rules
+            if !loggedin
+                a(href="/login") Login 
+                a(href="/signup") Sign Up
+            else
+                a(href="/logout", onclick="return confirm('Are you sure you want to log out?')") Logout
+        div.content
+            h1 Rules and Regulations
+            div.rules    
+                div.container.blue
+                    div.container.overlay.red
+                        h2 Starting the Game 
+                    div.rules
+                        ul 
+                            li The host must create a game session on a laptop or mobile phone.
+                            li Players must join the session using the game code and a mobile phone. 
+                            li If the host wants to play, he must join the game on a mobile phone.
+                            li The device used to create the session will only be used to monitor the session.
+                            li The card deck consists of 76 numbered cards, 20 QR code cards, 4 wild cards and 12 action cards.
+                            li Each player receives 7 cards each.
+                            li The game starts normally according to the standard rules of UNO.
+                div.container.yellow
+                    div.container.overlay.green
+                        h2 Playing the Game
+                    div.rules
+                        ul 
+                            li If a player has a QR code crad, he can challenge any player with the card.
+                            li The challenged player will have to scan the QR code on the card and answer the question.
+                            li According to the answer, the web app will display a reward or a penalty.
+                            li Each correct answer carries one mark 
+                            li For each 5 points won, a player receives an additional reward.
+                            li The first player with no cards left wins the game, similarly to the standard UNO rules.

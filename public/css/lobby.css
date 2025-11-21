@@ -1,0 +1,95 @@
+.content {
+    margin: 5% 5%;
+}
+
+h1 {
+    color: #000000;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    margin-top: 10%;
+    font-size: 1.8rem;
+}
+
+h2 {
+    margin-top: 2%;
+    color: #28527A;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.buttons {
+    margin-top: 15%;;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center; 
+    align-items: center;
+}
+
+button {
+    padding: 10px 10px;
+    background-color: #28527A;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    width: auto;
+    min-width: 100px;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+#gamePin{
+    color: #28527A;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+ul#players {
+    list-style: none;
+    padding: 0px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+ul#players li {
+    margin: 10px 0;
+}
+
+@media only screen and (min-width: 600px) {
+    .content {
+        margin: 3% 10% 0 10%;
+    }
+
+    h1 {
+        margin-top: 0%;
+        font-size: 3.2rem;
+    }
+
+    h2{
+        font-size: 2.2rem;
+    }
+
+    button{
+        min-width: 140px;
+    }
+
+    .buttons{
+        margin-top: 8%;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    #gamePin{
+        color: #28527A;
+        text-align: center;
+        font-size: 1.9rem;
+    }
+
+    ul#players {
+        font-size: 1.6rem;
+    }
+}
